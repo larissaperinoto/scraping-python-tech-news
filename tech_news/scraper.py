@@ -72,10 +72,10 @@ def get_tech_news(amount):
             news_content = fetch(url)
             news_dict = scrape_news(news_content)
             news.append(news_dict)
-            create_news(news_dict)
 
             if len(news) == amount:
                 next_page = None
+                create_news(news)
                 return news
             else:
                 next_page = scrape_next_page_link(page_content)
