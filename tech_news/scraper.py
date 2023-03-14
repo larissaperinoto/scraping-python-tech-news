@@ -27,7 +27,14 @@ def scrape_updates(html_content):
 
 # Requisito 3
 def scrape_next_page_link(html_content):
-    """Seu código deve vir aqui"""
+    if type(html_content) is not str:
+        return None
+    BASE_URL = "https://blog.betrybe.com"
+    selector = Selector(text=html_content)
+    next_page_url = selector.css(".current::text").get()
+    if next_page_url is None:
+        return None
+    return f"{BASE_URL}/page/{str(int(next_page_url) + 1)}/"
 
 
 # Requisito 4
