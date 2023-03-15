@@ -32,7 +32,9 @@ def test_reading_plan_group_news():
     try:
         ReadingPlanService.group_news_for_available_time(-1)
     except ValueError as e:
-        print(str(e))
         assert str(e) == "Valor 'available_time' deve ser maior que zero"
 
     """ find_news_mock.stop() """
+
+
+test_reading_plan_group_news()
