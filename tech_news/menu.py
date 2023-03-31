@@ -42,7 +42,7 @@ def switch(option):
             return search_by_date(date)
         case 3:
             category = input(actions[option])
-            return search_by_category(date)
+            return search_by_category(category)
         case 4:
             return top_5_categories()
         case 5:
