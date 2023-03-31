@@ -5,6 +5,7 @@ from tech_news.analyzer.search_engine import (
 )
 import sys
 
+
 menu = """Selecione uma das opções a seguir:
  0 - Popular o banco com notícias;
  1 - Buscar notícias por título;
@@ -13,6 +14,7 @@ menu = """Selecione uma das opções a seguir:
  4 - Listar top 5 categorias;
  5 - Sair.
  """
+
 
 actions = {
     0: "Digite quantas notícias serão buscadas:",
