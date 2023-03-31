@@ -17,35 +17,36 @@ menu = """Selecione uma das opções a seguir:
 
 
 actions = {
-    0: "Digite quantas notícias serão buscadas:",
-    1: "Digite o título:",
-    2: "Digite a data no formato aaaa-mm-dd:",
-    3: "Digite a categoria:",
+    "0": "Digite quantas notícias serão buscadas:",
+    "1": "Digite o título:",
+    "2": "Digite a data no formato aaaa-mm-dd:",
+    "3": "Digite a categoria:",
 }
 
 
 def analyzer_menu():
-    option = int(input(menu))
+    option = input(menu)
+
     return switch(option)
 
 
 def switch(option):
     match option:
-        case 0:
+        case "0":
             response = input(actions[option])
-            return get_tech_news(int(response))
-        case 1:
+            return get_tech_news(response)
+        case "1":
             title = input(actions[option])
             return search_by_title(title)
-        case 2:
+        case "2":
             date = input(actions[option])
             return search_by_date(date)
-        case 3:
+        case "3":
             category = input(actions[option])
             return search_by_category(category)
-        case 4:
+        case "4":
             return top_5_categories()
-        case 5:
-            return print("Até a próxima!")
+        case "5":
+            print("Encerrando script")
         case _:
-            sys.stderr.write("Opção inválida")
+            sys.stderr.write("Opção inválida\n")
