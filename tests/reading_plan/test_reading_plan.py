@@ -1,6 +1,5 @@
 from tech_news.analyzer.reading_plan import ReadingPlanService  # noqa: F401, E261, E501
-""" from unittest import mock, TestCase
- """
+import pytest
 
 mock_data = [
     {
@@ -25,16 +24,6 @@ mock_data = [
 
 
 def test_reading_plan_group_news():
-    """ database.find_news = mock.MagicMock(return_value=mock_data) """
-    """   find_news_mock = mock.patch.object(ReadingPlanService, "_db_news_proxy")
-    mockando = find_news_mock.start()
-    mockando.return_value = mock_data """
-    try:
+    m = "Valor 'available_time' deve ser maior que zero"
+    with pytest.raises(ValueError, match=m):
         ReadingPlanService.group_news_for_available_time(-1)
-    except ValueError as e:
-        assert str(e) == "Valor 'available_time' deve ser maior que zero"
-
-    """ find_news_mock.stop() """
-
-
-test_reading_plan_group_news()
