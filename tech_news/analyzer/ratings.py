@@ -12,4 +12,3 @@ def top_5_categories():
     most_common = sorted(counted, key=counted.get, reverse=True)
 
     return most_common[0:5]
-
